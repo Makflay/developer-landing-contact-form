@@ -1,11 +1,76 @@
+@use "variables" as *;
+@use "blocks/hero";
+@use "blocks/stack";
+@use "blocks/experience";
+@use "blocks/workflow";
+@use "blocks/ai-tools";
+@use "blocks/projects";
+@use "blocks/contacts";
+@use "blocks/form";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: sans-serif;
-  background: #0f172a;
-  color: white;
+  min-width: 320px;
+  font-family: $font-main;
+  background: $color-bg;
+  color: $color-text;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.section {
+  padding: 88px 24px;
+}
+
+.section__inner {
+  width: min(100%, $container-width);
+  margin: 0 auto;
+}
+
+.section__eyebrow {
+  margin-bottom: 10px;
+  color: $color-accent;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.section__title {
+  max-width: 720px;
+  margin-bottom: 32px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.12;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .section {
+    padding: 64px 18px;
+  }
+
+  .section__title {
+    margin-bottom: 24px;
+  }
 }

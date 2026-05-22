@@ -1,0 +1,75 @@
+@use "../variables" as *;
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+  padding: 28px;
+  background: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+}
+
+.contact-form__field {
+  display: grid;
+  gap: 8px;
+}
+
+.contact-form__label {
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  width: 100%;
+  padding: 13px 14px;
+  color: $color-text;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+}
+
+.contact-form__textarea {
+  resize: vertical;
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+  border-color: $color-accent;
+  outline: 3px solid rgba(37, 99, 235, 0.16);
+}
+
+.contact-form__button {
+  padding: 14px 18px;
+  color: #ffffff;
+  font-weight: 800;
+  background: $color-accent;
+  border: 0;
+  border-radius: $radius;
+}
+
+.contact-form__button:hover {
+  background: $color-accent-dark;
+}
+
+.contact-form__status {
+  font-weight: 700;
+}
+
+.contact-form__status--loading {
+  color: $color-muted;
+}
+
+.contact-form__status--success {
+  color: $color-success;
+}
+
+.contact-form__status--error {
+  color: $color-error;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .contact-form {
+    padding: 20px;
+  }
+}

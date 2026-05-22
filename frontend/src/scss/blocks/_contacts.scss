@@ -1,0 +1,33 @@
+@use "../variables" as *;
+
+.contacts {
+  background: $color-surface;
+}
+
+.contacts__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.contacts__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-style: normal;
+}
+
+.contacts__link {
+  color: $color-muted;
+}
+
+.contacts__link:hover {
+  color: $color-accent;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .contacts__inner {
+    grid-template-columns: 1fr;
+  }
+}
