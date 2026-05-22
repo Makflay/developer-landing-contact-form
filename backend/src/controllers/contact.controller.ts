@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { sendContactEmails } from "../services/mail.service";
 
 export const handleContactForm = async (req: Request, res: Response) => {
   try {
@@ -10,6 +11,8 @@ export const handleContactForm = async (req: Request, res: Response) => {
         message: "All fields are required",
       });
     }
+
+    await sendContactEmails({ name, phone, email, comment });
 
     return res.status(200).json({
       success: true,
