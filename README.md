@@ -63,22 +63,6 @@ git clone https://github.com/Makflay/developer-landing-contact-form.git
 cd developer-landing-contact-form
 ```
 
-## Install dependencies
-
-### Terminal 1 — Frontend
-
-```bash
-cd frontend
-npm install
-```
-
-### Terminal 2 — Backend
-
-```bash
-cd backend
-npm install
-```
-
 ## Create `.env` file from `.env.example`
 
 ```bash
@@ -87,12 +71,13 @@ cp .env.example .env
 
 Then update environment variables with your credentials.
 
-## Run development servers
+## Install dependencies and Run development servers
 
 ### Terminal 1 — Frontend
 
 ```bash
 cd frontend
+npm install
 npm run dev
 ```
 
@@ -106,6 +91,7 @@ http://localhost:5173
 
 ```bash
 cd backend
+npm install
 npm run dev
 ```
 
@@ -114,8 +100,6 @@ Backend runs on:
 ```txt
 http://localhost:5000
 ```
-
----
 
 # Available Scripts
 
