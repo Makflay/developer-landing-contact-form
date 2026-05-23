@@ -11,6 +11,7 @@
 }
 
 .experience__item {
+  min-width: 0;
   padding: 22px;
   background: $color-bg;
   border: 1px solid $color-border;
@@ -20,10 +21,12 @@
 .experience__title {
   margin-bottom: 10px;
   font-size: 1.08rem;
+  overflow-wrap: anywhere;
 }
 
 .experience__text {
   color: $color-muted;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: $breakpoint-tablet) {

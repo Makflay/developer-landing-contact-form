@@ -11,6 +11,10 @@
   align-items: start;
 }
 
+.contacts__content {
+  min-width: 0;
+}
+
 .contacts__list {
   display: flex;
   flex-direction: column;
@@ -20,6 +24,7 @@
 
 .contacts__link {
   color: $color-muted;
+  overflow-wrap: anywhere;
 }
 
 .contacts__link:hover {

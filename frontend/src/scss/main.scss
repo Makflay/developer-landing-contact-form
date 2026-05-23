@@ -47,6 +47,7 @@ button {
 
 .section__inner {
   width: min(100%, $container-width);
+  min-width: 0;
   margin: 0 auto;
 }
 
@@ -59,10 +60,12 @@ button {
 }
 
 .section__title {
+  width: 100%;
   max-width: 720px;
   margin-bottom: 32px;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.12;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: $breakpoint-mobile) {

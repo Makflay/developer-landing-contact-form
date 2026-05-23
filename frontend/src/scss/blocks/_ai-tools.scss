@@ -17,11 +17,13 @@
 }
 
 .ai-tools__item {
+  min-width: 0;
   padding: 18px;
   color: #e7ecf7;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: $radius;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: $breakpoint-tablet) {

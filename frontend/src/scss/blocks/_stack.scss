@@ -8,11 +8,13 @@
 }
 
 .stack__item {
+  min-width: 0;
   padding: 18px;
   font-weight: 700;
   background: $color-surface;
   border: 1px solid $color-border;
   border-radius: $radius;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: $breakpoint-tablet) {

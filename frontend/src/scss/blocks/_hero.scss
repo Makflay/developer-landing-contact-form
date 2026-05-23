@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: space-between;
   width: min(100%, $container-width);
+  min-width: 0;
   margin: 0 auto;
 }
 
@@ -32,6 +33,7 @@
   flex-direction: column;
   justify-content: center;
   width: min(100%, $container-width);
+  min-width: 0;
   margin: 0 auto;
 }
 
@@ -44,16 +46,20 @@
 }
 
 .hero__title {
+  width: 100%;
   max-width: 780px;
   font-size: clamp(3rem, 9vw, 6.5rem);
   line-height: 0.96;
+  overflow-wrap: anywhere;
 }
 
 .hero__text {
+  width: 100%;
   max-width: 640px;
   margin-top: 24px;
   color: $color-muted;
   font-size: clamp(1.08rem, 2vw, 1.32rem);
+  overflow-wrap: anywhere;
 }
 
 .hero__cta {
