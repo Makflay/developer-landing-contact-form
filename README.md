@@ -10,16 +10,15 @@ The project includes:
 - email sending via Nodemailer
 - responsive UI architecture
 
-# Stack
+# Tech Stack
 
-## Frontend:
+## Frontend
 
-- HTML
 - SCSS
 - TypeScript
 - Vite
 
-## Backend:
+## Backend
 
 - Node.js
 - Express
@@ -55,27 +54,42 @@ project/
 
 ---
 
-# Installation
+# How to Start
 
-## Frontend
+Clone the repository:
+
+```bash
+git clone https://github.com/Makflay/developer-landing-contact-form.git
+cd developer-landing-contact-form
+```
+
+## Install dependencies
+
+### Terminal 1 — Frontend
 
 ```bash
 cd frontend
 npm install
 ```
 
-## Backend
+### Terminal 2 — Backend
 
 ```bash
 cd backend
 npm install
 ```
 
----
+## Create `.env` file from `.env.example`
 
-# Run Development Servers
+```bash
+cp .env.example .env
+```
 
-## Frontend
+Then update environment variables with your credentials.
+
+## Run development servers
+
+### Terminal 1 — Frontend
 
 ```bash
 cd frontend
@@ -88,9 +102,7 @@ Frontend runs on:
 http://localhost:5173
 ```
 
----
-
-## Backend
+### Terminal 2 — Backend
 
 ```bash
 cd backend
@@ -105,23 +117,20 @@ http://localhost:5000
 
 ---
 
-# Environment Variables
+# Available Scripts
 
-Create a `.env` file in the project root.
+Frontend:
 
-Example:
+```bash
+npm run dev
+npm run build
+```
 
-```env
-PORT=5000
+Backend:
 
-SMTP_HOST=smtp.yandex.ru
-SMTP_PORT=587
-SMTP_USER=your_email@yandex.ru
-
-# Use Yandex app password, not your account password
-SMTP_PASS=your_app_password
-
-CONTACT_RECEIVER_EMAIL=your_email@yandex.ru
+```bash
+npm run dev
+npm start
 ```
 
 ---
