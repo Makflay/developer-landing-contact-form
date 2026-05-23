@@ -17,7 +17,11 @@ app.use(
 );
 app.use(express.json());
 
-app.get("/api/test", (req, res) => {
+app.get("/", (_req, res) => {
+  res.send("API is running");
+});
+
+app.get("/api/test", (_req, res) => {
   res.status(200).json({
     success: true,
     message: "Backend is running",
