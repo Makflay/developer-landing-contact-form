@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { env } from "../config/env.config";
 
 type ContactFormData = {
   name: string;
@@ -8,14 +9,22 @@ type ContactFormData = {
 };
 
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: Number(process.env.SMTP_PORT) === 465,
+  host: env.SMTP_HOST,
+  port: Number(env.SMTP_PORT),
+  secure: Number(env.SMTP_PORT) === 465,
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+    user: env.SMTP_USER,
+    pass: env.SMTP_PASS,
   },
 });
+
+console.log(
+  env.SMTP_HOST,
+  env.SMTP_PORT,
+  env.SMTP_PORT,
+  env.SMTP_USER,
+  env.SMTP_PASS,
+);
 
 export const sendContactEmails = async ({
   name,
@@ -23,14 +32,14 @@ export const sendContactEmails = async ({
   email,
   comment,
 }: ContactFormData) => {
-  const ownerEmail = process.env.OWNER_EMAIL;
+  const ownerEmail = env.OWNER_EMAIL;
 
   if (!ownerEmail) {
     throw new Error("OWNER_EMAIL is not defined");
   }
 
   await transporter.sendMail({
-    from: `"Developer Landing" <${process.env.SMTP_USER}`,
+    from: `"Developer Landing" <${env.SMTP_USER}`,
     to: ownerEmail,
     replyTo: email,
     subject: `New contact form message from ${name}`,
@@ -44,7 +53,7 @@ export const sendContactEmails = async ({
   });
 
   await transporter.sendMail({
-    from: `"Developer Landing" <${process.env.SMTP_USER}>`,
+    from: `"Developer Landing" <${env.SMTP_USER}>`,
     to: email,
     subject: "Your message has been received",
     text: `
