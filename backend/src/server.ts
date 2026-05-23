@@ -6,8 +6,15 @@ import { env } from "./config/env.config";
 const app = express();
 
 const PORT = env.PORT || 5000;
+const FRONTEND_URL = env.FRONTEND_URL || "http://localhost:5173";
 
-app.use(cors());
+app.use(
+  cors({
+    origin: env.FRONTEND_URL,
+    methods: ["GET", "POST"],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 
 app.get("/api/test", (req, res) => {

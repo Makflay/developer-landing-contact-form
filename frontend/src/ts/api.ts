@@ -10,7 +10,9 @@ export type ContactFormResponse = {
   message: string;
 };
 
-const CONTACT_ENDPOINT = "http://localhost:5000/api/contact";
+console.log("import.meta.env.VITE_API_URL", import.meta.env.VITE_API_URL);
+
+const CONTACT_ENDPOINT = `${import.meta.env.VITE_API_URL}/api/contact`;
 
 export async function sendContactForm(
   data: ContactFormData,

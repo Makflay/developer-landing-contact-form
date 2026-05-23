@@ -11,6 +11,7 @@ export const env = {
   SMTP_PORT: Number(process.env.SMTP_PORT),
   SMTP_USER: process.env.SMTP_USER,
   SMTP_PASS: process.env.SMTP_PASS,
+  FRONTEND_URL: process.env.FRONTEND_URL,
 
   CONTACT_RECEIVER_EMAIL: process.env.CONTACT_RECEIVER_EMAIL,
 };
