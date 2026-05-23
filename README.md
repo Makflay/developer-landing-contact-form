@@ -1,16 +1,8 @@
 # Developer Landing Page
 
-Responsive landing page with contact form and backend email integration.
+Адаптивный лендинг с формой обратной связи и backend-интеграцией для отправки email.
 
-The project includes:
-
-- modern frontend setup with Vite + TypeScript
-- Express backend API
-- form validation
-- email sending via Nodemailer
-- responsive UI architecture
-
-# Tech Stack
+# Стек технологий
 
 ## Frontend
 
@@ -27,51 +19,38 @@ The project includes:
 
 ---
 
-# Features
+# Функционал проекта
 
-- Responsive landing page
-- Semantic HTML structure
-- SCSS architecture
-- Contact form with validation
-- Loading / success / error states
-- Backend API integration
-- Email sending with Nodemailer
-- Email copy for the user
-- Environment variables support
-
----
-
-# Project Structure
-
-```txt
-project/
-│
-├── frontend/
-├── backend/
-├── .env.example
-└── README.md
-```
+- Адаптивная верстка
+- Семантическая HTML-структура
+- Форма обратной связи
+- Валидация формы
+- Отображение состояний загрузки / успеха / ошибки
+- Интеграция frontend и backend
+- Отправка email через Nodemailer
+- Отправка копии сообщения пользователю
+- Поддержка `.env` переменных
 
 ---
 
-# How to Start
+# Как запустить проект
 
-Clone the repository:
+1. Клонировать репозиторий:
 
 ```bash
 git clone https://github.com/Makflay/developer-landing-contact-form.git
 cd developer-landing-contact-form
 ```
 
-## Create `.env` file from `.env.example`
+## Создать `.env` из файла `.env.example`.
 
 ```bash
 cp .env.example .env
 ```
 
-Then update environment variables with your credentials.
+Затем заполнить переменные окружения своими данными.
 
-## Install dependencies and Run development servers
+## Установить зависимости и запустить проект
 
 ### Terminal 1 — Frontend
 
@@ -81,7 +60,7 @@ npm install
 npm run dev
 ```
 
-Frontend runs on:
+Frontend будет доступен по адресу:
 
 ```txt
 http://localhost:5173
@@ -95,27 +74,90 @@ npm install
 npm run dev
 ```
 
-Backend runs on:
+Backend будет доступен по адресу
 
 ```txt
 http://localhost:5000
 ```
 
-# Available Scripts
+# Реализация формы
 
-Frontend:
+Форма реализована с разделением frontend и backend логики.
 
-```bash
-npm run dev
-npm run build
-```
+## Frontend:
 
-Backend:
+- сбор данных формы
+- клиентская валидация
+- обработка состояний загрузки
+- отображение ошибок и успешной отправки
 
-```bash
-npm run dev
-npm start
-```
+## Backend:
+
+- прием POST-запроса
+- серверная проверка данных
+- отправка email через Nodemailer
+- отправка копии письма пользователю
+
+---
+
+# Использование AI
+
+Во время разработки использовались:
+
+- VS Code
+- OpenAI Codex
+
+AI использовался как инструмент ускорения разработки.
+
+С помощью Codex были реализованы:
+
+- верстка интерфейса
+- SCSS-стилизация
+- backend-логика
+- сервисы и модули проекта
+- boilerplate-код
+- рефакторинг отдельных частей приложения
+
+Для постановки задач использовался структурированный подход к промптам:
+
+1. Context — описание текущего контекста проекта
+2. Rules — правила и требования к реализации
+3. Task — конкретная задача
+4. Constraints — ограничения и технические условия
+5. Expected output — ожидаемый результат
+
+Пример workflow:
+
+- указывался путь к файлу (например: src/mail.service.ts)
+- описывалась необходимая логика
+- формировались требования к реализации
+- после генерации код проверялся, тестировался и дорабатывался вручную
+
+---
+
+# Что было сделано вручную
+
+- проектирование структуры проекта
+- настройка frontend и backend конфигурации
+- настройка Vite и TypeScript
+- проектирование архитектуры приложения
+- интеграция frontend и backend
+- настройка Nodemailer
+- формирование требований и промптов для AI
+- проверка и исправление сгенерированного кода
+- финальная отладка и тестирование проекта
+
+---
+
+# Структура проекта
+
+developer-landing-contact-form/
+│
+├── frontend/
+├── backend/
+├── .env.example
+├── .gitignore
+└── README.md
 
 ---
 
@@ -123,7 +165,7 @@ npm start
 
 ## POST `/api/contact`
 
-Request body:
+Пример запроса:
 
 ```json
 {
@@ -134,7 +176,7 @@ Request body:
 }
 ```
 
-Success response:
+Пример успешного ответа:
 
 ```json
 {
@@ -143,7 +185,7 @@ Success response:
 }
 ```
 
-Error response:
+Пример ошибки:
 
 ```json
 {
@@ -154,30 +196,12 @@ Error response:
 
 ---
 
-# AI Usage
+# Примечание
 
-During development, AI-assisted tools were used for:
+Проект выполнен в рамках тестового задания с упором на:
 
-- layout generation
-- refactoring
-- debugging
-- frontend structure optimization
-
-Tools used:
-
-- Codex
-- VS Code
-
-AI tools were used as development assistants, while architecture, implementation decisions, testing, and final verification were done manually.
-
----
-
-# Notes
-
-This project was created as a test assignment and focuses on:
-
-- frontend architecture
-- API integration
-- form handling
-- responsive layout
-- clean project structure
+- frontend-архитектуру
+- работу с формами
+- интеграцию API
+- адаптивную верстку
+- чистую структуру проекта
