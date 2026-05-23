@@ -18,28 +18,20 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-console.log(
-  env.SMTP_HOST,
-  env.SMTP_PORT,
-  env.SMTP_PORT,
-  env.SMTP_USER,
-  env.SMTP_PASS,
-);
-
 export const sendContactEmails = async ({
   name,
   phone,
   email,
   comment,
 }: ContactFormData) => {
-  const ownerEmail = env.OWNER_EMAIL;
+  const ownerEmail = env.CONTACT_RECEIVER_EMAIL;
 
   if (!ownerEmail) {
-    throw new Error("OWNER_EMAIL is not defined");
+    throw new Error("CONTACT_RECEIVER_EMAIL is not defined");
   }
 
   await transporter.sendMail({
-    from: `"Developer Landing" <${env.SMTP_USER}`,
+    from: `"Developer Landing" <${env.SMTP_USER}>`,
     to: ownerEmail,
     replyTo: email,
     subject: `New contact form message from ${name}`,
