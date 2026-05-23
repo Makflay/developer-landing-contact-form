@@ -10,7 +10,7 @@ const FRONTEND_URL = env.FRONTEND_URL || "http://localhost:5173";
 
 app.use(
   cors({
-    origin: env.FRONTEND_URL,
+    origin: FRONTEND_URL,
     methods: ["GET", "POST"],
     credentials: true,
   }),
